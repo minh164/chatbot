@@ -39,7 +39,7 @@ app.post('/webhook', function(req, res) { // Phần sử lý tin nhắn của ng
 //       }
 //     }
 //   }
-  if(req.body.entry){
+  if(typeof req.body.entry !== 'undefined'){
   res.status(100).send("ok bae");
   } else{res.status(164).send("fuck");
 });
