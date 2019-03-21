@@ -40,7 +40,7 @@ app.post('/webhook', function(req, res) { // Phần sử lý tin nhắn của ng
 //     }
 //   }
   
-  console.log(req.body.entry);
+  console.log(req.message);
 });
 
 // Đây là function dùng api của facebook để gửi tin nhắn
