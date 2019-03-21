@@ -42,6 +42,7 @@ app.post('/webhook', function(req, res) { // Phần sử lý tin nhắn của ng
 //     }
 //   }
   res.status(202).send("OK");
+  console.log(entries);
 });
 
 // Đây là function dùng api của facebook để gửi tin nhắn
