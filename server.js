@@ -23,7 +23,7 @@ app.get('/webhook', function(req, res) { // Đây là path để validate tooken
 //     res.send(req.query['hub.challenge']);
 //   }
   if(VALIDATION_TOKEN){
-    res.send('deo co');
+    res.send(VALIDATION_TOKEN);
   } else {res.send('Error, wrong validation token'+VALIDATION_TOKEN);}
 });
 
