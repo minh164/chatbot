@@ -19,29 +19,27 @@ app.get('/', (req, res) => {
 });
 
 app.get('/webhook', function(req, res) { // Đây là path để validate tooken bên app facebook gửi qua
-//   if (req.query['hub.verify_token'] === VALIDATION_TOKEN) {
-//     res.send(req.query['hub.challenge']);
-//   }
-  if(VALIDATION_TOKEN){
-    res.send(VALIDATION_TOKEN);
-  } else {res.send('Error, wrong validation token'+VALIDATION_TOKEN);}
+  if (req.query['hub.verify_token'] === VALIDATION_TOKEN) {
+    res.send(req.query['hub.challenge']);
+  }
+  res.send('Error, wrong validation token.');
 });
 
 app.post('/webhook', function(req, res) { // Phần sử lý tin nhắn của người dùng gửi đến
-//   var entries = req.body.entry;
-//   for (var entry of entries) {
-//     var messaging = entry.messaging;
-//     for (var message of messaging) {
-//       var senderId = message.sender.id;
-//       if (message.message) {
-//         if (message.message.text) {
-//           var text = message.message.text;
-//           sendMessage(senderId, "Hello!! I'm a bot. Your message: " + text);
-//         }
-//       }
-//     }
-//   }
-  if(req.body.entry){res.send('co')};
+  var entries = req.body.entry;
+  for (var entry of entries) {
+    var messaging = entry.messaging;
+    for (var message of messaging) {
+      var senderId = message.sender.id;
+      if (message.message) {
+        if (message.message.text) {
+          var text = message.message.text;
+          sendMessage(senderId, "Hello!! I'm a bot. Your message: " + text);
+        }
+      }
+    }
+  }
+  res.status(200).send("OK");
 });
 
 // Đây là function dùng api của facebook để gửi tin nhắn
@@ -64,7 +62,7 @@ function sendMessage(senderId, message) {
 }
 
 app.set('port', process.env.PORT || 5000);
-app.set('ip', process.env.IP || "0.0.0.0");
+app.set('ip', process.env.IP || "127.0.0.1");
 
 server.listen(app.get('port'), app.get('ip'), function() {
   console.log("Chat bot server listening at %s:%d ", app.get('ip'), app.get('port'));
