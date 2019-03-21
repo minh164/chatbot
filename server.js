@@ -41,7 +41,7 @@ app.post('/webhook', function(req, res) { // Phần sử lý tin nhắn của ng
 //       }
 //     }
 //   }
-  return respone()->json(['abc'=>req.body.entry]);
+  if(req.body.entry){res.send('co')};
 });
 
 // Đây là function dùng api của facebook để gửi tin nhắn
