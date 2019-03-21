@@ -23,8 +23,8 @@ app.get('/webhook', function(req, res) { // Đây là path để validate tooken
 //     res.send(req.query['hub.challenge']);
 //   }
   if(VALIDATION_TOKEN){
-    res.send('Error, wrong validation token'.VALIDATION_TOKEN);
-  } else {res.send('deo co');}
+    res.send('deo co');
+  } else {res.send('Error, wrong validation token'+VALIDATION_TOKEN);}
 });
 
 app.post('/webhook', function(req, res) { // Phần sử lý tin nhắn của người dùng gửi đến
