@@ -19,10 +19,12 @@ app.get('/', (req, res) => {
 });
 
 app.get('/webhook', function(req, res) { // Đây là path để validate tooken bên app facebook gửi qua
-  if (req.query['hub.verify_token'] === VALIDATION_TOKEN) {
-    res.send(req.query['hub.challenge']);
-  }
-  res.send('Error, wrong validation token'.VALIDATION_TOKEN);
+//   if (req.query['hub.verify_token'] === VALIDATION_TOKEN) {
+//     res.send(req.query['hub.challenge']);
+//   }
+  if(VALIDATION_TOKEN){
+    res.send('Error, wrong validation token'.VALIDATION_TOKEN);
+  } else {res.send('deo co');}
 });
 
 app.post('/webhook', function(req, res) { // Phần sử lý tin nhắn của người dùng gửi đến
