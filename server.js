@@ -2,6 +2,7 @@ const APP_SECRET = 'f64324ec706d45b5e9de93c4b5b19fe0';
 const VALIDATION_TOKEN = 'chatbot';
 const PAGE_ACCESS_TOKEN = 'EAAH17oX3IIIBAEyVlhK716HDZAe5GAIqQeo7YjzEEh6O1UHPQ5UHb86u4re6ohmHnYVhVo1I9TzhXgwfjZAuiV1hrOvJ9UIPpRtuZCEdieNCkMnX6OkVLuUsgIN16BwnHZARLZAh6K2KcUSiFSoN4K2JHFE4to8kLZCAIhtWdiKKWaex2VwPIS';
 
+
 var http = require('http');
 var bodyParser = require('body-parser');
 var express = require('express');
@@ -61,7 +62,7 @@ function sendMessage(senderId, message) {
 }
 
 app.set('port', process.env.PORT || 5000);
-app.set('ip', process.env.IP || "0.0.0.0");
+app.set('ip', process.env.IP || "127.0.0.1");
 
 server.listen(app.get('port'), app.get('ip'), function() {
   console.log("Chat bot server listening at %s:%d ", app.get('ip'), app.get('port'));

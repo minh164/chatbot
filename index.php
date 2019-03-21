@@ -10,6 +10,8 @@
 <body>
     <h1>hihihihihi</h1>
 
+
     <script src="server.js"></script>
+    <script src="require.js"></script>
 </body>
 </html>
