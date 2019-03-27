@@ -1,6 +1,6 @@
 <?php
 // parameters
-$hubVerifyToken = 'chatbot';
+/*$hubVerifyToken = 'chatbot';
 $accessToken =   "EAAH17oX3IIIBAAIDNngmB8FSiZB5I43LswJO5gty40efd6BSV72HhqojNdpACllH1vna5JZBDVkhxxaNaZBLHQgDPdLlG7kw7KSZCLtqyI8ZBvfUd5tMSUiRt9oQNcVNNhIZCQ9U7KdOtNe8JawiiY2LJJTYl8ocfPmmqO156sILLhq1hJZAmZAZB";
 
 // check token at setup
@@ -34,4 +34,4 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
 if(!empty($input)){
     $result = curl_exec($ch);
 }
-curl_close($ch);
+curl_close($ch);*/
