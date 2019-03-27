@@ -49,7 +49,7 @@ app.post('/webhook', function(req, res) {
   res.status(200).send("OK");
 });
 
-
+sendMessage(2382560798445202, "hello babe!");
 // Gửi thông tin tới REST API để trả lời
 function sendMessage(senderId, message) {
   request({
