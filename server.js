@@ -37,8 +37,12 @@ app.post('/webhook', function(req, res) {
     res.status(200).send("OK");
 });
 
-// //tự động gửi tin nhắn đến user
-// sendMessage(2382560798445202, "hello babe!");
+autoMessage();
+function autoMessage(){
+    app.get(url('https://graph.facebook.com/2382560798445202?fields=gender&access_token=EAAH17oX3IIIBAAIDNngmB8FSiZB5I43LswJO5gty40efd6BSV72HhqojNdpACllH1vna5JZBDVkhxxaNaZBLHQgDPdLlG7kw7KSZCLtqyI8ZBvfUd5tMSUiRt9oQNcVNNhIZCQ9U7KdOtNe8JawiiY2LJJTYl8ocfPmmqO156sILLhq1hJZAmZAZB'), function(res)){
+        console.log(res);
+    }sendMessage(2382560798445202, "hello babe!");
+}
 
 // Gửi thông tin tới REST API để trả lời
 function sendMessage(senderId, message) {
