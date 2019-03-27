@@ -28,7 +28,7 @@ app.get('/webhook', function(req, res) {
 });
 
 // Xử lý khi có người nhắn tin cho bot
-app.post('/webhook', function(req, res) {
+app.post('/whook', function(req, res) {
     console.log(3);
     var entries = req.body.entry;
     for (var entry of entries) {
