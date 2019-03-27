@@ -34,12 +34,12 @@ app.post('/webhook', function(req, res) {
     var messaging = entry.messaging;
     for (var message of messaging) {
       var senderId = message.sender.id;
+      console.log(senderId);
       if (message.message) {
         // If user send text
         if (message.message.text) {
           var text = message.message.text;
           console.log(text); // In tin nhắn người dùng
-          console.log(mesage.sender.id);
           sendMessage(senderId, "Tui là bot đây: " + text);
         }
       }
