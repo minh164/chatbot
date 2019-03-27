@@ -14,13 +14,13 @@ var server = http.createServer(app);
 var request = require("request");
 
 app.get('/', (req, res) => {
-    
+    console.log(1);
     res.send("Home page. Server running okay.");
 });
 
 // Đây là đoạn code để tạo Webhook
 app.get('/webhook', function(req, res) {
-    
+    console.log(2);
     if (req.query['hub.verify_token'] === 'chatbot') {
         res.send(req.query['hub.challenge']);
     }
@@ -29,7 +29,7 @@ app.get('/webhook', function(req, res) {
 
 // Xử lý khi có người nhắn tin cho bot
 app.post('/webhook', function(req, res) {
-    
+    console.log(3);
     var entries = req.body.entry;
     for (var entry of entries) {
         var messaging = entry.messaging;
@@ -72,7 +72,7 @@ function sendMessage(senderId, message) {
 }
 
 app.set('port', process.env.PORT || 5000);
-app.set('ip', process.env.IP || "127.0.0.1");
+app.set('ip', process.env.IP || "0.0.0.0");
 
 server.listen(app.get('port'), app.get('ip'), function() {
   console.log("Chat bot server listening at %s:%d ", app.get('ip'), app.get('port'));
