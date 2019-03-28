@@ -4,7 +4,7 @@
 $hubVerifyToken = 'chatbot';
 $accessToken =   "EAAH17oX3IIIBAAIDNngmB8FSiZB5I43LswJO5gty40efd6BSV72HhqojNdpACllH1vna5JZBDVkhxxaNaZBLHQgDPdLlG7kw7KSZCLtqyI8ZBvfUd5tMSUiRt9oQNcVNNhIZCQ9U7KdOtNe8JawiiY2LJJTYl8ocfPmmqO156sILLhq1hJZAmZAZB";
 
-
+$variable = 1; file_put_contents('php://stderr', print_r($variable++, TRUE));
    $variable = $_REQUEST['hub_verify_token']; file_put_contents('php://stderr', print_r($variable, TRUE));
 
 /*
