@@ -1,5 +1,5 @@
 <?php
-error_log(print_r('abc', TRUE)); 
+$variable = 'abc'; file_put_contents('php://stderr', print_r($variable, TRUE));
 // parameters
 /*$hubVerifyToken = 'chatbot';
 $accessToken =   "EAAH17oX3IIIBAAIDNngmB8FSiZB5I43LswJO5gty40efd6BSV72HhqojNdpACllH1vna5JZBDVkhxxaNaZBLHQgDPdLlG7kw7KSZCLtqyI8ZBvfUd5tMSUiRt9oQNcVNNhIZCQ9U7KdOtNe8JawiiY2LJJTYl8ocfPmmqO156sILLhq1hJZAmZAZB";
