@@ -9,7 +9,7 @@ $input = json_decode(file_get_contents('php://input'), true);
 $senderId = $input['entry'][0]['messaging'][0]['sender']['id'];
 $messageText = $input['entry'][0]['messaging'][0]['message']['text'];
 $abc = file_get_contents('php://input');
-file_put_contents('php://stderr', print_r($_REQUEST['hub_challenge'], TRUE));
+file_put_contents('php://stderr', print_r($_REQUEST, TRUE));
 
 
 
