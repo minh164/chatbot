@@ -4,7 +4,12 @@
 $hubVerifyToken = 'chatbot';
 $accessToken =   "EAAH17oX3IIIBAAIDNngmB8FSiZB5I43LswJO5gty40efd6BSV72HhqojNdpACllH1vna5JZBDVkhxxaNaZBLHQgDPdLlG7kw7KSZCLtqyI8ZBvfUd5tMSUiRt9oQNcVNNhIZCQ9U7KdOtNe8JawiiY2LJJTYl8ocfPmmqO156sILLhq1hJZAmZAZB";
 
-file_put_contents('php://stderr', print_r($_REQUEST['hub_verify_token'], TRUE));
+$input = json_decode(file_get_contents('php://input'), true);
+
+$senderId = $input['entry'][0]['messaging'][0]['sender']['id'];
+$messageText = $input['entry'][0]['messaging'][0]['message']['text'];
+
+file_put_contents('php://input', print_r($messageText, TRUE));
 $variable = 1; file_put_contents('php://stderr', print_r($variable++, TRUE));
 
 
