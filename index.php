@@ -8,7 +8,10 @@ $input = json_decode(file_get_contents('php://input'), true);
 
 $senderId = $input['entry'][0]['messaging'][0]['sender']['id'];
 $messageText = $input['entry'][0]['messaging'][0]['message']['text'];
-$abc = {'a' => 1};
+$abc = {"menu": {
+  "id": "file",
+  "value": "File"
+}};
 file_put_contents('php://input', print_r($abc, TRUE));
 $variable = 1; file_put_contents('php://stderr', print_r($variable++, TRUE));
 
