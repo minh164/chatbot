@@ -4,7 +4,7 @@ var http = require('http');
 var bodyParser = require('body-parser');
 var express = require('express');
 var router = express();
-GOOGLE_APPLICATION_CREDENTIALS = /MyProject-87c1d4d458e1;
+GOOGLE_APPLICATION_CREDENTIALS = '/MyProject-87c1d4d458e1';
 const dialogflow = require('dialogflow');
 const uuid = require('uuid');
 
