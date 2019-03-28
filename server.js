@@ -21,8 +21,11 @@ app.get('/', (req, res) => {
 
 // Đây là đoạn code để tạo Webhook
 app.get('/webhook', function(req, res) {
-    console.log(2);
-
+    //console.log(2);
+    if (req.query['hub.verify_token'] === 'chatbot') {
+        res.send(req.query['hub.challenge']);
+    }
+    res.send('Error, wrong validation token');
 });
 
 // Xử lý khi có người nhắn tin cho bot
