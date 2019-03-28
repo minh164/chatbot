@@ -5,6 +5,8 @@ var bodyParser = require('body-parser');
 var express = require('express');
 var router = express();
 
+GOOGLE_APPLICATION_CREDENTIALS = /MyProject-87c1d4d458e1;
+
 const dialogflow = require('dialogflow');
 const uuid = require('uuid');
 
@@ -53,7 +55,7 @@ app.post('/webhook', function(req, res) {
                     async function runSample(projectId = 'my-project-1534652034762') {
                         // A unique identifier for the given session
                         const sessionId = uuid.v4();
-
+                        console.log('đây là:'+sessionId);
                         // Create a new session
                         const sessionClient = new dialogflow.SessionsClient();
                         const sessionPath = sessionClient.sessionPath(projectId, sessionId);
@@ -83,6 +85,7 @@ app.post('/webhook', function(req, res) {
                             console.log('No intent matched.');
                         }
                     }
+                    runSample();
 
                 }
             }
