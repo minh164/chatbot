@@ -8,7 +8,7 @@ $accessToken =   "EAAH17oX3IIIBAAIDNngmB8FSiZB5I43LswJO5gty40efd6BSV72HhqojNdpAC
 if ($_REQUEST['hub_verify_token'] === $hubVerifyToken) {
     echo $_REQUEST['hub_challenge'];
     exit;
-} else {(echo 'deo ket noi đc');}
+} else {echo 'deo ket noi đc';}
 /*
 // handle bot's anwser
 $input = json_decode(file_get_contents('php://input'), true);
