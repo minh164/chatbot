@@ -8,8 +8,8 @@ $input = json_decode(file_get_contents('php://input'), true);
 
 $senderId = $input['entry'][0]['messaging'][0]['sender']['id'];
 $messageText = $input['entry'][0]['messaging'][0]['message']['text'];
-$abc = {"id": "file"};
-file_put_contents('php://input', print_r($abc, TRUE));
+
+file_put_contents('php://input', print_r($input, TRUE));
 $variable = 1; file_put_contents('php://stderr', print_r($variable++, TRUE));
 
 
