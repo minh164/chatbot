@@ -4,9 +4,9 @@
 $hubVerifyToken = 'chatbot';
 $accessToken =   "EAAH17oX3IIIBAAIDNngmB8FSiZB5I43LswJO5gty40efd6BSV72HhqojNdpACllH1vna5JZBDVkhxxaNaZBLHQgDPdLlG7kw7KSZCLtqyI8ZBvfUd5tMSUiRt9oQNcVNNhIZCQ9U7KdOtNe8JawiiY2LJJTYl8ocfPmmqO156sILLhq1hJZAmZAZB";
 
-if(isset($_REQUEST['hub_verify_token'])){
+
    $variable = $_REQUEST['hub_verify_token']; file_put_contents('php://stderr', print_r($variable, TRUE));
-}else{echo $hubVerifyToken;}
+
 /*
 // check token at setup
 if ($_REQUEST['hub_verify_token'] === $hubVerifyToken) {
