@@ -26,7 +26,6 @@ function authorize() {
         const authFactory = new GoogleAuth();
         const jwtClient = new authFactory.JWT(
             process.env.GOOGLE_CLIENT_EMAIL, // defined in Heroku
-            null,
             process.env.GOOGLE_PRIVATE_KEY, // defined in Heroku
             ['https://www.googleapis.com/auth/calendar']
         );
