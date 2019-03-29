@@ -4,7 +4,7 @@
 //   projectId: 'my-project-1534652034762',
 //   credentials: process.env.GCS_KEYFILE
 // });
-console.log(process.env);
+console.log(process.env.GCS_KEYFILE.project_id);
 
 var logger = require('morgan');
 var http = require('http');
