@@ -108,7 +108,6 @@ app.post('/webhook', function(req, res) {
                             },
                         };
 console.log('đây là:'+sessionId);
-                        console.log(sessionClient);
                         // Send request and log result
                         const responses = await sessionClient.detectIntent(request);
                         console.log('Detected intent');
