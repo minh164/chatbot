@@ -1,8 +1,9 @@
 const gcs = require('@google-cloud/storage');
-const cre = gcs({
-  projectId: 'my-project-1534652034762',
-  credentials: process.env.GCS_KEYFILE
-});
+console.log(gsc);
+// const cre = gcs({
+//   projectId: 'my-project-1534652034762',
+//   credentials: process.env.GCS_KEYFILE
+// });
 
 var logger = require('morgan');
 var http = require('http');
