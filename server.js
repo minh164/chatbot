@@ -1,6 +1,7 @@
 const {Storage} = require('@google-cloud/storage');
 const storage = new Storage({ 
     projectId: 'my-project-1534652034762', 
+    console.log('đã vô đây');
     credentials: 'process.env.GCS_KEYFILE'
 });
 // Makes an authenticated API request.
