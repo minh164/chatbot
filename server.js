@@ -1,3 +1,7 @@
+const gcs = require('@google-cloud/storage')({
+  projectId: 'my-project-1534652034762',
+  credentials: process.env.GCS_KEYFILE
+});
 
 var logger = require('morgan');
 var http = require('http');
@@ -5,7 +9,6 @@ var bodyParser = require('body-parser');
 var express = require('express');
 var router = express();
 
-process.env.GCS_KEYFILE;
 
 const dialogflow = require('dialogflow');
 const uuid = require('uuid');
