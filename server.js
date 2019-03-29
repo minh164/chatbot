@@ -4,7 +4,12 @@ var http = require('http');
 var bodyParser = require('body-parser');
 var express = require('express');
 var router = express();
-GOOGLE_APPLICATION_CREDENTIALS = /MyProject-87c1d4d458e1;
+
+const gcs = require('@google-cloud/storage')({
+    projectId: 'my-project-ID',
+    credentials: JSON.parse(process.env.GCS_KEYFILE)
+});
+
 const dialogflow = require('dialogflow');
 const uuid = require('uuid');
 
