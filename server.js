@@ -8,19 +8,19 @@ const storage = new Storage({
 //     credentials: JSON.parse(process.env.GCS_KEYFILE)
 });
 // Makes an authenticated API request.
-// storage
-//   .getBuckets()
-//   .then((results) => {
-//     const buckets = results[0];
+storage
+  .getBuckets()
+  .then((results) => {
+    const buckets = results[0];
 
-//     console.log('Buckets:');
-//     buckets.forEach((bucket) => {
-//       console.log(bucket.name);
-//     });
-//   })
-//   .catch((err) => {
-//     console.error('ERROR:', err);
-//   });                             
+    console.log('Buckets:');
+    buckets.forEach((bucket) => {
+      console.log(bucket.name);
+    });
+  })
+  .catch((err) => {
+    console.error('ERROR:', err);
+  });                             
 // console.log(JSON.parse(process.env.GCS_KEYFILE).project_id);
 
 // const GoogleAuth = require('google-auth-library');
