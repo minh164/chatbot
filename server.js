@@ -5,7 +5,7 @@ const storage = new Storage({
           private_key: process.env.GOOGLE_PRIVATE_KEY,
           client_email: process.env.GOOGLE_CLIENT_EMAIL
      }
-//     credentials: JSON.parse(process.env.GCS_KEYFILE)
+//     credentials: JSON.parse(process.env.GCS_KEYFILE) .replace(/\\n/g, '\n')
 });
 // Makes an authenticated API request.
 storage
