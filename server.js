@@ -74,7 +74,7 @@ app.post('/webhook', function(req, res) {
                     async function runSample(projectId = 'my-project-1534652034762') {
                         // A unique identifier for the given session
                         const sessionId = uuid.v4();
-                        console.log('đây là:'+sessionId);
+                        
                         // Create a new session
                         const sessionClient = new dialogflow.SessionsClient();
                         const sessionPath = sessionClient.sessionPath(projectId, sessionId);
@@ -91,7 +91,7 @@ app.post('/webhook', function(req, res) {
                                 },
                             },
                         };
-
+console.log('đây là:'+sessionId);
                         // Send request and log result
                         const responses = await sessionClient.detectIntent(request);
                         console.log('Detected intent');
