@@ -1,8 +1,10 @@
 const {Storage} = require('@google-cloud/storage');
 const storage = new Storage({ 
-     process.env.GOOGLE_CLIENT_EMAIL, // defined in Heroku
-     process.env.GOOGLE_PRIVATE_KEY, // defined in Heroku
-//     projectId: 'my-project-1534652034762',
+     projectId: 'my-project-1534652034762',
+     credentials: {
+          private_key: process.env.GOOGLE_PRIVATE_KEY,
+          client_email: process.env.GOOGLE_CLIENT_EMAIL
+     }
 //     credentials: JSON.parse(process.env.GCS_KEYFILE)
 });
 // Makes an authenticated API request.
