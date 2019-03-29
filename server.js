@@ -5,10 +5,7 @@ var bodyParser = require('body-parser');
 var express = require('express');
 var router = express();
 
-const gcs = require('@google-cloud/storage'){
-    projectId: 'my-project-1534652034762',
-    credentials: process.env.GCS_KEYFILE
-};
+process.env.GCS_KEYFILE;
 
 const dialogflow = require('dialogflow');
 const uuid = require('uuid');
