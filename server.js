@@ -1,10 +1,23 @@
 const {Storage} = require('@google-cloud/storage');
 const storage = new Storage({ 
     projectId: 'my-project-1534652034762', 
-    credentials: 'process.env.GCS_KEYFILE'
+    keyFilename: 'process.env.GCS_KEYFILE'
 });
-                             
-console.log(JSON.parse(process.env.GCS_KEYFILE).project_id);
+// Makes an authenticated API request.
+storage
+  .getBuckets()
+  .then((results) => {
+    const buckets = results[0];
+
+    console.log('Buckets:');
+    buckets.forEach((bucket) => {
+      console.log(bucket.name);
+    });
+  })
+  .catch((err) => {
+    console.error('ERROR:', err);
+  });                             
+// console.log(JSON.parse(process.env.GCS_KEYFILE).project_id);
 
 var logger = require('morgan');
 var http = require('http');
