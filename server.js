@@ -1,5 +1,5 @@
 const gcs = require('@google-cloud/storage');
-console.log(gsc); 
+
 // const cre = gcs({
 //   projectId: 'my-project-1534652034762',
 //   credentials: process.env.GCS_KEYFILE
@@ -14,7 +14,7 @@ var router = express();
 
 const dialogflow = require('dialogflow');
 const uuid = require('uuid');
-
+console.log(uuid); 
 var app = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
