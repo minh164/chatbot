@@ -19,6 +19,22 @@ storage
   });                             
 // console.log(JSON.parse(process.env.GCS_KEYFILE).project_id);
 
+const GoogleAuth = require('google-auth-library');
+
+function authorize() {
+    return new Promise(resolve => {
+        const authFactory = new GoogleAuth();
+        const jwtClient = new authFactory.JWT(
+            process.env.GOOGLE_CLIENT_EMAIL, // defined in Heroku
+            null,
+            process.env.GOOGLE_PRIVATE_KEY, // defined in Heroku
+            ['https://www.googleapis.com/auth/calendar']
+        );
+
+        jwtClient.authorize(() => resolve(jwtClient));
+    });
+}
+
 var logger = require('morgan');
 var http = require('http');
 var bodyParser = require('body-parser');
