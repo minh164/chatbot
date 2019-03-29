@@ -1,4 +1,4 @@
-const gcs = require('@google-cloud/storage');
+var gcs = require('@google-cloud/storage');
 gcs({
   projectId: 'my-project-1534652034762',
   credentials: process.env.GCS_KEYFILE
