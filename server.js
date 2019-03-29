@@ -2,7 +2,7 @@ const {Storage} = require('@google-cloud/storage');
 const storage = new Storage({ 
      projectId: 'my-project-1534652034762',
      credentials: {
-          private_key: process.env.GOOGLE_PRIVATE_KEY,
+          private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
           client_email: process.env.GOOGLE_CLIENT_EMAIL
      }
 //     credentials: JSON.parse(process.env.GCS_KEYFILE)
@@ -23,20 +23,20 @@ storage
   });                             
 // console.log(JSON.parse(process.env.GCS_KEYFILE).project_id);
 
-// const GoogleAuth = require('google-auth-library');
+const GoogleAuth = require('google-auth-library');
 
-// function authorize() {
-//     return new Promise(resolve => {
-//         const authFactory = new GoogleAuth();
-//         const jwtClient = new authFactory.JWT(
-//             process.env.GOOGLE_CLIENT_EMAIL, // defined in Heroku
-//             process.env.GOOGLE_PRIVATE_KEY, // defined in Heroku
-//             ['https://www.googleapis.com/auth/calendar']
-//         );
+function authorize() {
+    return new Promise(resolve => {
+        const authFactory = new GoogleAuth();
+        const jwtClient = new authFactory.JWT(
+            process.env.GOOGLE_CLIENT_EMAIL, // defined in Heroku
+            process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'), // defined in Heroku
+            ['https://www.googleapis.com/auth/calendar']
+        );
 
-//         jwtClient.authorize(() => resolve(jwtClient));
-//     });
-// }
+        jwtClient.authorize(() => resolve(jwtClient));
+    });
+}
 
 var logger = require('morgan');
 var http = require('http');
