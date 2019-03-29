@@ -6,7 +6,7 @@ var express = require('express');
 var router = express();
 
 const gcs = require('@google-cloud/storage');
-gcs = {
+const gcs = {
     projectId: 'my-project-1534652034762',
     credentials: process.env.GCS_KEYFILE
 };
