@@ -14,7 +14,7 @@ var router = express();
 
 const dialogflow = require('dialogflow');
 const uuid = require('uuid');
-console.log(uuid); 
+console.log(http); 
 var app = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
