@@ -58,7 +58,7 @@ var server = http.createServer(app);
 var request = require("request");
 
 app.get('/', (req, res) => {
-    console.log(req.body);
+    
     res.send("Home page. Server running okay.");
 });
 
@@ -73,7 +73,7 @@ app.get('/webhook', function(req, res) {
 
 // Xử lý khi có người nhắn tin cho bot
 app.post('/webhook', function(req, res) {
-    console.log(3);
+    console.log(req.body);
     var entries = req.body.entry;
     for (var entry of entries) {
         var messaging = entry.messaging;
