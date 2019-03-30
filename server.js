@@ -88,7 +88,7 @@ app.post('/webhook', function(req, res) {
                     request.get('https://bots.dialogflow.com/facebook/f11dde88-e067-458b-82f9-a933af52a05d/webhook?hub.verify_token=bot', function(error, response, body){
                         console.log(body);
                     });
-                    request.post({url:'https://bots.dialogflow.com/facebook/f11dde88-e067-458b-82f9-a933af52a05d/webhook', form: {text:'text'}, function(err,res,body){
+                    request.post({url:'https://bots.dialogflow.com/facebook/f11dde88-e067-458b-82f9-a933af52a05d/webhook', form: {text:'text'}}, function(err,res,body){
                         console.log(res);
                     });
                     /**
