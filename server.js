@@ -1,26 +1,26 @@
-const {Storage} = require('@google-cloud/storage'); 
-const storage = new Storage({ 
-     projectId: 'my-project-1534652034762',
-     credentials: {
-          private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
-          client_email: process.env.GOOGLE_CLIENT_EMAIL
-     }
-//     credentials: JSON.parse(process.env.GCS_KEYFILE) 
-});
-// Makes an authenticated API request.
-storage
-  .getBuckets()
-  .then((results) => {
-    const buckets = results[0];
+// const {Storage} = require('@google-cloud/storage'); 
+// const storage = new Storage({ 
+//      projectId: 'my-project-1534652034762',
+//      credentials: {
+//           private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+//           client_email: process.env.GOOGLE_CLIENT_EMAIL
+//      }
+// //     credentials: JSON.parse(process.env.GCS_KEYFILE) 
+// });
+// // Makes an authenticated API request.
+// storage
+//   .getBuckets()
+//   .then((results) => {
+//     const buckets = results[0];
 
-    console.log('Buckets:');
-    buckets.forEach((bucket) => {
-      console.log(bucket.name);
-    });
-  })
-  .catch((err) => {
-    console.error('ERROR:', err);
-  });                             
+//     console.log('Buckets:');
+//     buckets.forEach((bucket) => {
+//       console.log(bucket.name);
+//     });
+//   })
+//   .catch((err) => {
+//     console.error('ERROR:', err);
+//   });                             
 // console.log(JSON.parse(process.env.GCS_KEYFILE).project_id);
 
 // const GoogleAuth = require('google-auth-library');
@@ -85,45 +85,45 @@ app.post('/webhook', function(req, res) {
                     var text = message.message.text;
                     console.log(text); // In tin nhắn người dùng
                     console.log(entries);
-                    //sendMessage(senderId, "Tui là bot đây: " + text);
+                    sendMessage(senderId, "Tui là bot đây: " + text);
                     /**
                      * Send a query to the dialogflow agent, and return the query result.
                      * @param {string} projectId The project to be used
                      */
-                    async function runSample(projectId = 'my-project-1534652034762') {
-                        // A unique identifier for the given session
-                        const sessionId = uuid.v4();
+//                     async function runSample(projectId = 'my-project-1534652034762') {
+//                         // A unique identifier for the given session
+//                         const sessionId = uuid.v4();
                         
-                        // Create a new session
-                        const sessionClient = new dialogflow.SessionsClient();
-                        const sessionPath = sessionClient.sessionPath(projectId, sessionId);
+//                         // Create a new session
+//                         const sessionClient = new dialogflow.SessionsClient();
+//                         const sessionPath = sessionClient.sessionPath(projectId, sessionId);
 
-                        // The text query request.
-                        const request = {
-                            session: sessionPath,
-                            queryInput: {
-                                text: {
-                                    // The query to send to the dialogflow agent
-                                    text: text,
-                                    // The language used by the client (en-US)
-                                    languageCode: 'en-US',
-                                },
-                            },
-                        };
-console.log('đây là:'+sessionId);
-                        // Send request and log result
-                        const responses = await sessionClient.detectIntent(request);
-                        console.log('Detected intent');
-                        const result = responses[0].queryResult;
-                        console.log('Query: ${result.queryText}');
-                        console.log('Response: ${result.fulfillmentText}');
-                        if (result.intent) {
-                            console.log('Intent: ${result.intent.displayName}');
-                        } else {
-                            console.log('No intent matched.');
-                        }
-                    }
-                    runSample();
+//                         // The text query request.
+//                         const request = {
+//                             session: sessionPath,
+//                             queryInput: {
+//                                 text: {
+//                                     // The query to send to the dialogflow agent
+//                                     text: text,
+//                                     // The language used by the client (en-US)
+//                                     languageCode: 'en-US',
+//                                 },
+//                             },
+//                         };
+// console.log('đây là:'+sessionId);
+//                         // Send request and log result
+//                         const responses = await sessionClient.detectIntent(request);
+//                         console.log('Detected intent');
+//                         const result = responses[0].queryResult;
+//                         console.log('Query: ${result.queryText}');
+//                         console.log('Response: ${result.fulfillmentText}');
+//                         if (result.intent) {
+//                             console.log('Intent: ${result.intent.displayName}');
+//                         } else {
+//                             console.log('No intent matched.');
+//                         }
+//                     }
+//                     runSample();
 
                 }
             }
