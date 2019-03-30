@@ -58,7 +58,7 @@ var server = http.createServer(app);
 var request = require("request");
 
 app.get('/', (req, res) => {
-    console.log(1);
+    console.log(req);
     res.send("Home page. Server running okay.");
 });
 
