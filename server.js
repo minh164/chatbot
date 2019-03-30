@@ -85,8 +85,8 @@ app.post('/webhook', function(req, res) {
                     var text = message.message.text;
                     console.log(text); // In tin nhắn người dùng
                     sendMessage(senderId, "Tui là bot đây: " + text);
-                    request.get('https://bots.dialogflow.com/facebook/f11dde88-e067-458b-82f9-a933af52a05d/webhook?hub.verify_token=chatbot', function(req){
-                        console.log(req);
+                    request.get('https://bots.dialogflow.com/facebook/f11dde88-e067-458b-82f9-a933af52a05d/webhook?hub.verify_token=chatbot', function(error, response, body){
+                        console.log(body);
                     });
                     /**
                      * Send a query to the dialogflow agent, and return the query result.
