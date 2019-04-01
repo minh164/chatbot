@@ -6,7 +6,7 @@ const storage = new Storage({
 //           client_email: process.env.GOOGLE_CLIENT_EMAIL
 //      }
      credentials: JSON.parse(process.env.GCS_INFO),
-     key: process.env.ke
+     key: process.env.key
 });
 // Makes an authenticated API request.
 storage
@@ -121,7 +121,7 @@ app.post('/webhook', function(req, res) {
 console.log(sessionPath);
                          
                         // Send request and log result
-                        const responses = await sessionClient.detectIntent();
+                        const responses = await sessionClient.detectIntent(request);
                         console.log('Detected intent');
                         const result = responses[0].queryResult;
                         console.log('Query: ${result.queryText}');
