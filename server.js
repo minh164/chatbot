@@ -1,11 +1,11 @@
 const {Storage} = require('@google-cloud/storage');
 const storage = new Storage({ 
-     projectId: 'my-project-1534652034762',
-     credentials: {
-          private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
-          client_email: process.env.GOOGLE_CLIENT_EMAIL
-     }
-//     credentials: JSON.parse(process.env.GCS_KEYFILE) 
+//      projectId: 'my-project-1534652034762',
+//      credentials: {
+//           private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+//           client_email: process.env.GOOGLE_CLIENT_EMAIL
+//      }
+     credentials: JSON.parse(process.env.GCS_INFO) 
 });
 // Makes an authenticated API request.
 storage
