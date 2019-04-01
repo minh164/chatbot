@@ -21,7 +21,7 @@ storage
   .catch((err) => {
     console.error('ERROR:', err);
   });                             
-console.log(JSON.parse(process.env.GCS_KEYFILE).project_id);
+// console.log(JSON.parse(process.env.GCS_KEYFILE).project_id);
 
 // const GoogleAuth = require('google-auth-library');
 
