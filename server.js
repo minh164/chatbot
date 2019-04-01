@@ -118,18 +118,18 @@ app.post('/webhook', function(req, res) {
                             },
                         };
 console.log(sessionPath);
-                         sessionClient.detectIntent(request);
+                         
                         // Send request and log result
-//                         const responses = await sessionClient.detectIntent(request);
-//                         console.log('Detected intent');
-//                         const result = responses[0].queryResult;
-//                         console.log('Query: ${result.queryText}');
-//                         console.log('Response: ${result.fulfillmentText}');
-//                         if (result.intent) {
-//                             console.log('Intent: ${result.intent.displayName}');
-//                         } else {
-//                             console.log('No intent matched.');
-//                         }
+                        const responses = await sessionClient.detectIntent();
+                        console.log('Detected intent');
+                        const result = responses[0].queryResult;
+                        console.log('Query: ${result.queryText}');
+                        console.log('Response: ${result.fulfillmentText}');
+                        if (result.intent) {
+                            console.log('Intent: ${result.intent.displayName}');
+                        } else {
+                            console.log('No intent matched.');
+                        }
                     }
                     runSample();
 
