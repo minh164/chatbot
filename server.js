@@ -102,7 +102,7 @@ app.post('/webhook', function(req, res) {
                         const sessionId = uuid.v4();
                         
                         // Create a new session
-                        const sessionClient = new dialogflow.SessionsClient();
+                        const sessionClient = new dialogflow.SessionsClient(JSON.parse(process.env.GCS_INFO));
                         const sessionPath = sessionClient.sessionPath(projectId, sessionId);
 
                         // The text query request.
