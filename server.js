@@ -1,4 +1,4 @@
-// const {Storage} = require('@google-cloud/storage'); c
+// const {Storage} = require('@google-cloud/storage');
 // const storage = new Storage({ 
 //      projectId: 'my-project-1534652034762',
 //      credentials: {
@@ -94,7 +94,7 @@ app.post('/webhook', function(req, res) {
 //                     });
                     res.redirect(307, 'https://bots.dialogflow.com/facebook/f11dde88-e067-458b-82f9-a933af52a05d/webhook', function(req, res){
                         console.log('duoc roi đo ma');
-                    }););
+                    });
                     /**
                      * Send a query to the dialogflow agent, and return the query result.
                      * @param {string} projectId The project to be used
