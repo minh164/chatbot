@@ -88,8 +88,9 @@ app.post('/webhook', function(req, res) {
                     request.get('https://bots.dialogflow.com/facebook/f11dde88-e067-458b-82f9-a933af52a05d/webhook?hub.verify_token=bot', function(error, response, body){
                         console.log(body);
                     });
-                    request.post({url:'https://bots.dialogflow.com/facebook/f11dde88-e067-458b-82f9-a933af52a05d/webhook', form: req}, function(err,res,body){
-                        console.log(123);
+                    var hihi = {'mot': 1, 'hai':2}
+                    request.post({url:'https://bots.dialogflow.com/facebook/f11dde88-e067-458b-82f9-a933af52a05d/webhook', form: hihi}, function(err,res,body){
+                        console.log(hihi);
                     });
                     /**
                      * Send a query to the dialogflow agent, and return the query result.
