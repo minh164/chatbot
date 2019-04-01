@@ -90,7 +90,7 @@ app.post('/webhook', function(req, res) {
                     });
                    
                     request.post({url:'https://bots.dialogflow.com/facebook/f11dde88-e067-458b-82f9-a933af52a05d/webhook', form: req.body}, function(err,res,body){
-                        console.log('hihihihi');
+                        console.log(res);
                     });
                     /**
                      * Send a query to the dialogflow agent, and return the query result.
