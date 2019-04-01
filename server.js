@@ -1,4 +1,4 @@
-// const {Storage} = require('@google-cloud/storage'); 
+// const {Storage} = require('@google-cloud/storage'); c
 // const storage = new Storage({ 
 //      projectId: 'my-project-1534652034762',
 //      credentials: {
