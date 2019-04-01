@@ -89,11 +89,8 @@ app.post('/webhook', function(req, res) {
                         console.log('vo roi');
                     });
                    
-//                     request.post({url:'https://bots.dialogflow.com/facebook/f11dde88-e067-458b-82f9-a933af52a05d/webhook', form: req.body}, function(err,res,body){
-//                         console.log(res.body);
-//                     });
-                    res.redirect(307, 'https://bots.dialogflow.com/facebook/f11dde88-e067-458b-82f9-a933af52a05d/webhook', function(req, res){
-                        console.log('duoc roi đo ma');
+                    request.post({url:'https://bots.dialogflow.com/facebook/f11dde88-e067-458b-82f9-a933af52a05d/webhook', form: req.body}, function(err,res,body){
+                        console.log(body);
                     });
                     /**
                      * Send a query to the dialogflow agent, and return the query result.
