@@ -100,7 +100,7 @@ app.post('/webhook', function(req, res) {
                     async function runSample(projectId = 'my-project-1534652034762') {
                         // A unique identifier for the given session
                         const sessionId = uuid.v4();
-                        console.log(sesid: sessionId);
+                        console.log('sesid:'+sessionId);
                         // Create a new session
                         const sessionClient = new dialogflow.SessionsClient({keyFilename:JSON.parse(process.env.GCS_INFO)});
                         const sessionPath = sessionClient.sessionPath(projectId, sessionId);
