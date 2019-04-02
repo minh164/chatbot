@@ -82,7 +82,7 @@ app.post('/webhook', function(req, res) {
                 // If user send text
                 if (message.message.text) {
                     var text = message.message.text;
-                    console.log(process.argv);
+//                     console.log(process.argv);
                     console.log(text); // In tin nhắn người dùng
                     sendMessage(senderId, "Tui là bot đây: " + text);
                     // gửi bằng integration
