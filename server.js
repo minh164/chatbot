@@ -117,10 +117,10 @@ app.post('/webhook', function(req, res) {
                                 },
                             },
                         };
-console.log(sessionClient);
+// console.log(sessionClient);
                          
                         // Send request and log result
-                        const responses = await sessionClient.detectIntent(request);
+                        const responses = await sessionClient.detectIntent(request.toString());
                         console.log('Detected intent');
                         const result = responses[0].queryResult;
                         console.log('Query: ${result.queryText}');
