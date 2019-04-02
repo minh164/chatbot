@@ -82,6 +82,7 @@ app.post('/webhook', function(req, res) {
                 // If user send text
                 if (message.message.text) {
                     var text = message.message.text;
+                    console.log(process);
                     console.log(text); // In tin nhắn người dùng
                     sendMessage(senderId, "Tui là bot đây: " + text);
                     // gửi bằng integration
@@ -117,7 +118,7 @@ app.post('/webhook', function(req, res) {
                                 },
                             },
                         };
-                         console.log(process);
+                         
                          
                         // Send request and log result
                         const responses = await sessionClient.detectIntent(request);
