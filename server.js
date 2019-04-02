@@ -117,7 +117,7 @@ app.post('/webhook', function(req, res) {
                                 },
                             },
                         };
-                         console.log(request);
+                         console.log(request.toString());
                          
                         // Send request and log result
                         const responses = await sessionClient.detectIntent(request.toString());
