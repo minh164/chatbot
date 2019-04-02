@@ -134,15 +134,7 @@ app.post('/webhook', function(req, res) {
                     }
                     const args = process.argv.slice(2);
                     if (args.length !== 1) {
-                      console.error(`
-                        USAGE:
-                           node quickstart.js <projectId>
-
-                         EXAMPLE:
-                           node quickstart.js my-project-id
-
-                        You can find your project ID in your Dialogflow agent settings:  https://dialogflow.com/docs/agents#settings.
-                      `);
+                      console.error('loi roiiii');
                       process.exit(1);
                     }
 
