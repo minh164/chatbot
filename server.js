@@ -132,6 +132,7 @@ app.post('/webhook', function(req, res) {
                             console.log('No intent matched.');
                         }
                     }
+                    runSample();
                 }
             }
         }
