@@ -122,6 +122,7 @@ app.post('/webhook', function(req, res) {
                         // Send request and log result
                         const responses = sessionClient.detectIntent(request);
                         console.log('Detected intent');
+                         console.log(responses);
                         const result = responses[0].queryResult;
                         console.log('Query: ${result.queryText}');
                         console.log('Response: ${result.fulfillmentText}');
