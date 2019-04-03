@@ -85,14 +85,6 @@ app.post('/webhook', function(req, res) {
                     
                     console.log(text); // In tin nhắn người dùng
                     sendMessage(senderId, "Tui là bot đây: " + text);
-                    // gửi bằng integration
-//                     request.get('https://bots.dialogflow.com/facebook/f11dde88-e067-458b-82f9-a933af52a05d/webhook?hub.verify_token=bot', function(error, response, body){
-//                         console.log('vo roi');
-//                     });
-                   
-//                     request.post({url:'https://bots.dialogflow.com/facebook/f11dde88-e067-458b-82f9-a933af52a05d/webhook', form: req.body}, function(err,res,body){
-//                         console.log(body);
-//                     });
                     
                     /**
                      * Send a query to the dialogflow agent, and return the query result.
@@ -120,7 +112,7 @@ app.post('/webhook', function(req, res) {
                         };
 
                         // Send request and log result
-                        const responses = await sessionClient.detectIntent(request);
+                        const responses = sessionClient.detectIntent(request);
                         console.log('Detected intent');
                          console.log(responses);
                         const result = responses[0].queryResult;
