@@ -91,6 +91,7 @@ app.post('/webhook', function(req, res) {
                      * @param {string} projectId The project to be used
                      */
 //                     async function runSample(projectId = 'my-project-1534652034762') {
+                     const projectId = 'my-project-1534652034762';
                         // A unique identifier for the given session
                         const sessionId = uuid.v4();
                         console.log('sesid:'+sessionId);
